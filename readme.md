@@ -11,5 +11,8 @@
 - rinse and repeat
 
 # Learnings
+fast toggle like behavior cannot be done simply by using setState as react batches such especially on onClick events. this is to reduce unneccesary rerenders. There has  to be a prescribed way of doing this. I simply haven't found it yet
 
-React batches setState hence making it difficult to do rapid state changes that matter, eg toggles for messages. Still finding a solution.
+# Inspiration
+
+This project copies from [This tutorial by Borna Sepic](https://dev.to/bornasepic/pure-and-simple-tic-tac-toe-with-javascript-4pgn?signin=true) simply reactifys the logic
