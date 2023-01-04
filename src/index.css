@@ -75,6 +75,7 @@ button:focus-visible {
   margin: 50px auto;
 }
 .cell {
+  font-family: "Arial", sans-serif;
   font-family: "Permanent Marker", cursive;
   width: 100px;
   height: 100px;

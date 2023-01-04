@@ -11,3 +11,5 @@
 - rinse and repeat
 
 # Learnings
+
+React batches setState hence making it difficult to do rapid state changes that matter, eg toggles for messages. Still finding a solution.
