@@ -8,6 +8,11 @@ function App() {
   const [active, setActive] = useState(true);
   const [status, setStatus] = useState(`It's ${player}'s turn`);
 
+  useEffect(()=>{
+    handlePlayerChange()
+    handleResultValidation();
+  },[game])
+
   function handleCellPlayed(clickedCellIndex) {
     //state is immmutable so make copy of state
     let newState = [...game];
@@ -19,7 +24,11 @@ function App() {
 
   function handlePlayerChange() {
     // let currentPlayer = player
-    player === "X" ? setPlayer("O") : setPlayer("X");
+    if(player === "X"){
+      setPlayer("O")
+    }else{
+      setPlayer("X")
+    }
     setStatus(`It's ${player}'s turn`);
   }
 
@@ -69,7 +78,7 @@ function App() {
       return;
     }
     //once everything has been checked setup next round play
-    handlePlayerChange();
+    // handlePlayerChange();
   }
 
   function handleCellClick(e) {
@@ -81,9 +90,11 @@ function App() {
     }
     //if everything is fine proceed
     handleCellPlayed(clickedIndex);
-    handleResultValidation();
+    // handleResultValidation();
   }
   function handleRestartGame() {
+    setGame(["", "", "", "", "", "", "", "", ""])
+    setActive(true)
     console.log("game restarted");
   }
 
