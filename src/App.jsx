@@ -12,9 +12,6 @@ function App() {
     handlePlayerChange()
     handleResultValidation();
   },[game])
-  useEffect(()=>{
-    console.log({player})
-  },[player])
 
   function handleCellPlayed(clickedCellIndex) {
     //state is immmutable so make copy of state
