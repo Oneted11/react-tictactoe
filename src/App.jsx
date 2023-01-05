@@ -12,6 +12,9 @@ function App() {
     handlePlayerChange()
     handleResultValidation();
   },[game])
+  useEffect(()=>{
+    console.log({player})
+  },[player])
 
   function handleCellPlayed(clickedCellIndex) {
     //state is immmutable so make copy of state
@@ -26,10 +29,13 @@ function App() {
     // let currentPlayer = player
     if(player === "X"){
       setPlayer("O")
+      setStatus("It's O's turn")
     }else{
       setPlayer("X")
+      setStatus("It's X's turn")
     }
-    setStatus(`It's ${player}'s turn`);
+    //this displays the previous player so is always wrong, couls have put in a delay or as done above
+    // setStatus(`It's ${player}'s turn`);
   }
 
   function handleResultValidation() {
