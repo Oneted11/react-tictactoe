@@ -6,7 +6,7 @@ function App() {
   const [game, setGame] = useState(["", "", "", "", "", "", "", "", ""]);
   const [player, setPlayer] = useState("X");
   const [active, setActive] = useState(true);
-  const [status, setStatus] = useState(`It's ${player}'s turn`);
+  const [status, setStatus] = useState(`It's X's turn`);
 
   useEffect(()=>{
     handlePlayerChange()
@@ -98,7 +98,9 @@ function App() {
   function handleRestartGame() {
     setGame(["", "", "", "", "", "", "", "", ""])
     setActive(true)
-    console.log("game restarted");
+    setPlayer("X")
+    setStatus("It's X's turn")
+    // console.log("game restarted");
   }
 
   return (
